@@ -8,6 +8,8 @@ public class lighter : MonoBehaviour
     public GameObject cigarette;
     public GameObject cigarette1;
     public GameObject part;
+    public GameObject fire;
+
 
 
     // Start is called before the first frame update
@@ -28,6 +30,7 @@ public class lighter : MonoBehaviour
        // {
         Debug.Log("funnel");
         this.gameObject.GetComponent<Animator>().enabled = true;
+        fire.SetActive(true);
         //next.GetComponent<BoxCollider>().enabled = true;
 
 
