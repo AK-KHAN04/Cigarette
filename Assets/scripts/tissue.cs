@@ -2,28 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Funnel1 : MonoBehaviour
+public class tissue : MonoBehaviour
 {
+    // Start is called before the first frame update
 
-    public Animator anim;
     public GameObject next;
-
-    public GameObject prevColl;
-    public GameObject nextColl;
-
 
     private void OnTriggerEnter(Collider other)
     {
         //if (other.tag == "Stand")
         // {
         Debug.Log("funnel");
-        anim.enabled = true;
+        // anim.enabled = true;
+        this.gameObject.GetComponent<Animator>().enabled = true;
         this.gameObject.GetComponent<ObjectPicker>().enabled = false;
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         next.GetComponent<BoxCollider>().enabled = true;
 
-        prevColl.SetActive(false);
-        nextColl.GetComponent<BoxCollider>().enabled = true;
         // }
     }
 
@@ -33,4 +28,8 @@ public class Funnel1 : MonoBehaviour
         this.gameObject.GetComponent<Animator>().enabled = false;
     }
 
+    private void disabled()
+    {
+        this.gameObject.SetActive(false);
+    }
 }
