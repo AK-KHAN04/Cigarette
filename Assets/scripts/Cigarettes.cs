@@ -7,6 +7,9 @@ public class Cigarettes : MonoBehaviour
 
     public GameObject next;
 
+    public GameObject prevcoll;
+    public GameObject nextcoll;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +24,14 @@ public class Cigarettes : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         this.gameObject.GetComponent<Animator>().enabled = true;
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
         next.GetComponent<BoxCollider>().enabled = true;
         Debug.Log("Hello world");
+
+        prevcoll.GetComponent<BoxCollider>().enabled = false;
+        nextcoll.GetComponent<BoxCollider>().enabled = true;
+
     }
 }

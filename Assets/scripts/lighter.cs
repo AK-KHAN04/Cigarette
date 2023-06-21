@@ -9,9 +9,8 @@ public class lighter : MonoBehaviour
     public GameObject cigarette1;
     public GameObject part;
     public GameObject fire;
-    public GameObject cotton;
-    public GameObject canvas;
-    public GameObject finsh;
+    public GameObject finish;
+    public GameObject slides;
 
 
 
@@ -34,6 +33,7 @@ public class lighter : MonoBehaviour
         Debug.Log("funnel");
         this.gameObject.GetComponent<Animator>().enabled = true;
         fire.SetActive(true);
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
         //next.GetComponent<BoxCollider>().enabled = true;
 
 
@@ -44,28 +44,36 @@ public class lighter : MonoBehaviour
     {
         cigarette.SetActive(true);
         cigarette1.SetActive(false);
-        cotton.GetComponent<MeshRenderer>().material.color = Color.red;
         part.SetActive(true);
-        Invoke("colorChange",2f);
+        Invoke("slideShow", 7f);
     }
 
     public void colorChange()
     {
         //cotton.GetComponent<Animation>().Play("Cottonball");
-        Debug.Log("color changed");
-        cotton.GetComponent<MeshRenderer>().enabled = false;
-        Invoke("Canvas", 2f);
+ 
+        Invoke("slideShow", 5f);
     }
 
-    public void Canvas()
+    public void slideShow()
     {
-        canvas.SetActive(true);
-        Invoke("text", 2f);
+        slides.SetActive(true);
+        Invoke("text", 5f);
     }
+
 
     public void text()
     {
-        finsh.SetActive(true);
+        
+        finish.SetActive(true);
+       
     }
 
+
+    public void flameOff()
+    {
+        fire.SetActive(false);
+    }
+
+    
 }

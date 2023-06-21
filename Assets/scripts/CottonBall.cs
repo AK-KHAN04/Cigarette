@@ -6,6 +6,8 @@ public class CottonBall : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject next;
+    public GameObject coll;
+    public GameObject nextcoll;
     
 
     private void OnTriggerEnter(Collider other)
@@ -17,6 +19,10 @@ public class CottonBall : MonoBehaviour
         this.gameObject.GetComponent<ObjectPicker>().enabled = false;
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         next.GetComponent<BoxCollider>().enabled = true;
+
+        coll.GetComponent<BoxCollider>().enabled = false;
+        nextcoll.GetComponent<BoxCollider>().enabled = true;
+
 
         // }
     }

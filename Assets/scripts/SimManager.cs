@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SimManager : MonoBehaviour
 {
@@ -26,6 +27,11 @@ public class SimManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void sceneReload()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
