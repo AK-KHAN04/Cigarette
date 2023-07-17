@@ -11,13 +11,14 @@ public class lighter : MonoBehaviour
     public GameObject fire;
     public GameObject finish;
     public GameObject slides;
+    public Animator anim;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        anim = this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -31,7 +32,9 @@ public class lighter : MonoBehaviour
         //if (other.tag == "Stand")
        // {
         Debug.Log("funnel");
+    
         this.gameObject.GetComponent<Animator>().enabled = true;
+        anim.Play("Cigartter");
         fire.SetActive(true);
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         //next.GetComponent<BoxCollider>().enabled = true;
